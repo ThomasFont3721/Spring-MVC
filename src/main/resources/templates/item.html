@@ -1,0 +1,31 @@
+{{> header}}
+	<a class="ui black icon button" href="/"><i class="ui chevron left icon"></i> return</a>
+	<a class="ui black icon button" href="/item/new"><i class="ui plus icon"></i> add new</a>
+	
+	<div class="ui top attached tabular menu">
+		{{#categories}}
+			<a class="item" data-tab="{{libelle}}">{{libelle}}</a>
+		{{/categories}}
+	</div>
+	{{#categories}}
+		<div class="ui bottom attached tab segment" data-tab="{{libelle}}">
+			<div class="ui middle aligned divided list">
+				{{#elements}}
+					<div class="item">
+					    <div class="right floated content">
+					    	<h3 class="ui label green">{{eval}}</h3>
+					      	<a class="ui black icon button" href="/item/inc/{{nom}}/{{libelle}}"><i class="ui plus icon"></i></a>
+							<a class="ui black icon button" href="/item/dec/{{nom}}/{{libelle}}"><i class="minus icon"></i></a>
+							<a class="ui black icon button" href="/item/delete/{{nom}}/{{libelle}}"><i class="ui trash icon"></i></a>
+					    </div>
+				    	<div class="content">{{nom}}</div>
+				  </div>
+				{{/elements}}
+			</div>
+		</div>
+	{{/categories}}
+
+{{> footer}}
+<script>
+$('.menu .item').tab();
+</script>

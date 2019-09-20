@@ -1,4 +1,4 @@
-package edu.spring.td1;
+package edu.spring.td1.controllers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

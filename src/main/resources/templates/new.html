@@ -1,0 +1,18 @@
+{{> header}}
+<a class="ui black icon button" href="/item"><i class="ui chevron left icon"></i> return</a>
+<a class="ui black icon button" href="/item/new"><i class="ui plus icon"></i> add new</a>
+<form method="POST" action="/item/addNew">
+		<div class="ui action input">
+		  <input type="text" placeholder="Blabla..."  name="nom">
+		  <select class="ui compact selection dropdown" name="libelle">
+		  {{#categories}}
+		    <option value="{{libelle}}">{{libelle}}</option><i class="dropdown icon"></i>
+		    {{/categories}}
+		  </select>
+		  <button class="ui button">Add</button>
+		</div>
+</form>
+{{> footer}}
+<script>
+	$('.dropdown').dropdown();
+</script>
